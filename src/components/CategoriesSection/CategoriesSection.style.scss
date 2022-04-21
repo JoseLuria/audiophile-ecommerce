@@ -1,0 +1,47 @@
+@use "../../sass/utils";
+
+.categories-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: utils.rem(16);
+
+  @include utils.breakpoint(utils.$size-md) {
+    flex-direction: row;
+  }
+
+  @include utils.breakpoint(utils.$size-lg) {
+    gap: utils.rem(30);
+  }
+
+  .category-item {
+    position: relative;
+    width: 100%;
+
+    .category-image {
+      width: utils.rem(95);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .category-content {
+      margin-top: utils.rem(52);
+      padding-top: utils.rem(88);
+      padding-bottom: utils.rem(22);
+      border-radius: utils.rem(8);
+      background-color: utils.$light-gray;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .category-title {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: utils.rem(15);
+        margin-bottom: utils.rem(17);
+      }
+    }
+  }
+}

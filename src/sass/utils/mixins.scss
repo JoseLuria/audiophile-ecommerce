@@ -1,0 +1,17 @@
+@use "./variables.scss";
+
+@mixin breakpoint($size) {
+  @media (min-width: ($size)) {
+    @content;
+  }
+}
+
+@mixin hover() {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover,
+    &:focus-visible {
+      transition-duration: variables.$duration;
+      @content;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@use "../../sass/utils";
+
+.text-default {
+  font-weight: 500;
+  font-size: utils.rem(15);
+  line-height: utils.rem(25);
+}
+
+.text-new {
+  font-weight: 400;
+  font-size: utils.rem(14);
+  line-height: utils.rem(19.12);
+  letter-spacing: utils.rem(10);
+  text-transform: uppercase;
+}
+
+.text-beige {
+  color: utils.$beige;
+}
+
+.text-black {
+  color: utils.color-opacity(0.5, utils.$black);
+}
+
+.text-white {
+  color: utils.color-opacity(0.5, utils.$white);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}

@@ -1,0 +1,47 @@
+@use "../../sass/utils";
+
+.btn-styles {
+  height: utils.rem(48);
+  display: flex;
+  width: fit-content;
+  text-transform: uppercase;
+  font-size: utils.rem(13);
+  align-items: center;
+  font-weight: 700;
+  padding: 0 utils.rem(30);
+  border: 2px solid;
+}
+
+// Colors
+.btn-default {
+  background-color: utils.$beige;
+  color: utils.$transparent;
+  border-color: utils.$beige;
+
+  @include utils.hover {
+    background-color: utils.$light-beige;
+    border-color: utils.$light-beige;
+  }
+}
+
+.btn-black {
+  color: utils.$dark;
+  border-color: utils.$dark;
+
+  @include utils.hover {
+    background-color: utils.$dark;
+    color: utils.$transparent;
+  }
+}
+
+.btn-outline {
+  padding: 0;
+  height: auto;
+  border: none;
+  color: utils.color-opacity(0.5, utils.$dark);
+  gap: utils.rem(13);
+
+  @include utils.hover {
+    color: utils.$beige;
+  }
+}

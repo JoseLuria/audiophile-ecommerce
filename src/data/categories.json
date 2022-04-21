@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Headphones",
+    "image": "/categories/image-category-thumbnail-headphones.png",
+    "href": "headphones"
+  },
+  {
+    "name": "Speakers",
+    "image": "/categories/image-category-thumbnail-speakers.png",
+    "href": "speakers"
+  },
+  {
+    "name": "Earphones",
+    "image": "/categories/image-category-thumbnail-earphones.png",
+    "href": "earphones"
+  }
+]

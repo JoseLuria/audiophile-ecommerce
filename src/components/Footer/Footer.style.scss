@@ -1,0 +1,103 @@
+@use "../../sass/utils";
+
+.footer {
+  padding: 0 utils.rem(24) utils.rem(38);
+  background-color: utils.$black;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include utils.breakpoint(utils.$size-md) {
+    padding: 0 utils.rem(40) utils.rem(46);
+  }
+
+  .footer-container {
+    width: 100%;
+    max-width: utils.$max-w;
+
+    .footer-line {
+      width: utils.rem(101);
+      height: utils.rem(4);
+      background-color: utils.$beige;
+      margin: 0 auto utils.rem(48);
+
+      @include utils.breakpoint(utils.$size-md) {
+        margin: 0 0 utils.rem(48);
+      }
+    }
+
+    .footer-content {
+      width: 100%;
+      position: relative;
+
+      .footer-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: utils.rem(48);
+
+        @include utils.breakpoint(utils.$size-md) {
+          align-items: initial;
+          gap: utils.rem(32);
+        }
+
+        @include utils.breakpoint(utils.$size-lg) {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+
+      .footer-text {
+        margin: utils.rem(48) 0;
+
+        @include utils.breakpoint(utils.$size-md) {
+          margin-top: utils.rem(32);
+          margin-bottom: utils.rem(80);
+        }
+
+        @include utils.breakpoint(utils.$size-lg) {
+          width: utils.rem(540);
+          margin-top: utils.rem(36);
+          margin-bottom: utils.rem(56);
+        }
+      }
+
+      .footer-text,
+      .footer-copy {
+        @include utils.breakpoint(utils.$size-md) {
+          text-align: unset;
+        }
+      }
+
+      .footer-icons-section {
+        margin-top: utils.rem(48);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: utils.rem(16);
+
+        @include utils.breakpoint(utils.$size-md) {
+          width: fit-content;
+          position: absolute;
+          margin: 0;
+          bottom: 0;
+          right: 0;
+        }
+
+        @include utils.breakpoint(utils.$size-lg) {
+          top: 50%;
+          bottom: unset;
+          transform: translateY(-50%);
+        }
+
+        .footer-icon {
+          @include utils.hover {
+            filter: brightness(0) saturate(100%) invert(85%) sepia(46%) saturate(5182%)
+              hue-rotate(325deg) brightness(89%) contrast(89%);
+            transition-duration: unset;
+          }
+        }
+      }
+    }
+  }
+}

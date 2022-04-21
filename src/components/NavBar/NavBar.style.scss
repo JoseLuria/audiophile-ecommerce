@@ -1,0 +1,85 @@
+@use "../../sass/utils";
+
+.navbar {
+  width: 100%;
+  background-color: utils.$black;
+  padding: 0 utils.rem(24);
+  position: fixed;
+  top: 0;
+  z-index: 1;
+
+  @include utils.breakpoint(utils.$size-md) {
+    padding: 0 utils.rem(40);
+  }
+
+  .navbar-container {
+    width: 100%;
+    max-width: utils.$max-w;
+    height: utils.rem(90);
+    align-items: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin: 0 auto;
+    border-bottom: 1px solid utils.color-opacity(0.1, utils.$white);
+    transition-duration: utils.$duration;
+
+    @include utils.breakpoint(utils.$size-md) {
+      justify-content: unset;
+    }
+
+    @include utils.breakpoint(utils.$size-lg) {
+      height: utils.rem(96);
+      justify-content: center;
+    }
+
+    .navbar-btn-menu {
+      position: absolute;
+      left: 0;
+
+      @include utils.breakpoint(utils.$size-md) {
+        position: static;
+        margin-right: utils.rem(42);
+      }
+
+      @include utils.breakpoint(utils.$size-lg) {
+        display: none;
+      }
+    }
+
+    .navbar-btn-cart {
+      position: absolute;
+      right: 0;
+
+      @include utils.breakpoint(utils.$size-md) {
+        position: static;
+        margin-left: auto;
+      }
+
+      @include utils.breakpoint(utils.$size-lg) {
+        margin-left: 0;
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    .navbar-logo {
+      @include utils.breakpoint(utils.$size-lg) {
+        position: absolute;
+        left: 0;
+      }
+    }
+
+    ul {
+      display: none;
+
+      @include utils.breakpoint(utils.$size-lg) {
+        display: flex;
+      }
+    }
+  }
+
+  .no-navbar-border {
+    border-bottom: none;
+  }
+}

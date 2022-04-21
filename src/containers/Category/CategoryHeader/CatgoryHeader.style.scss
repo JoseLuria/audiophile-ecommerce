@@ -1,0 +1,33 @@
+@use "../../../sass/utils";
+
+.category-header {
+  width: 100%;
+  background-color: utils.$black;
+  padding-top: utils.rem(90);
+
+  &-container {
+    height: utils.rem(102);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include utils.breakpoint(utils.$size-md) {
+      height: utils.rem(246);
+    }
+
+    @include utils.breakpoint(utils.$size-md) {
+      height: utils.rem(239);
+    }
+
+    .category-header-title {
+      font-size: utils.rem(28);
+      text-transform: uppercase;
+      text-align: center;
+      color: white;
+
+      @include utils.breakpoint(utils.$size-md) {
+        font-size: utils.rem(40);
+      }
+    }
+  }
+}

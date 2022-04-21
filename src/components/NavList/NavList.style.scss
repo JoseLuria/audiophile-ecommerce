@@ -1,0 +1,25 @@
+@use "../../sass/utils";
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: utils.rem(16);
+
+  @include utils.breakpoint(utils.$size-md) {
+    flex-direction: row;
+    gap: utils.rem(34);
+  }
+
+  .nav-list-item {
+    color: utils.$white;
+    font-size: utils.rem(13);
+    line-height: utils.rem(25);
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @include utils.hover {
+      color: utils.$beige;
+    }
+  }
+}

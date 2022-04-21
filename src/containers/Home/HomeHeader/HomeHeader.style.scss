@@ -1,0 +1,77 @@
+@use "../../../sass/utils";
+
+.home-header {
+  width: 100%;
+  background-color: utils.$black;
+  display: flex;
+  position: relative;
+
+  .hero-image {
+    width: 100%;
+  }
+
+  .home-header-container {
+    padding: 0 utils.rem(52);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: utils.$max-w;
+    position: absolute;
+    top: utils.rem(90);
+    height: calc(100% - utils.rem(90));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include utils.breakpoint(utils.$size-lg) {
+      height: calc(100% - utils.rem(96));
+      top: utils.rem(96);
+      justify-content: left;
+    }
+
+    .home-header-content {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+
+      @include utils.breakpoint(utils.$size-md) {
+        width: utils.rem(379);
+      }
+
+      @include utils.breakpoint(utils.$size-lg) {
+        text-align: left;
+        align-items: initial;
+      }
+
+      .header-title {
+        text-transform: uppercase;
+        font-size: utils.rem(36);
+        color: utils.$white;
+        letter-spacing: utils.rem(1.29);
+        margin-top: utils.rem(16);
+        margin-bottom: utils.rem(23);
+
+        @include utils.breakpoint(utils.$size-md) {
+          font-size: utils.rem(56);
+          letter-spacing: utils.rem(2);
+          margin: utils.rem(24) 0;
+        }
+      }
+
+      .header-text {
+        @include utils.breakpoint(utils.$size-md) {
+          width: utils.rem(349);
+        }
+      }
+
+      .header-btn {
+        margin-top: utils.rem(29);
+
+        @include utils.breakpoint(utils.$size-md) {
+          margin-top: utils.rem(40);
+        }
+      }
+    }
+  }
+}
