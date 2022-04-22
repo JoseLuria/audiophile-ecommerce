@@ -45,3 +45,14 @@
     color: utils.$beige;
   }
 }
+
+.btn-gray {
+  background-color: utils.$dark;
+  color: utils.$transparent;
+  border-color: utils.$dark;
+
+  @include utils.hover {
+    background-color: utils.$gray;
+    border-color: utils.$gray;
+  }
+}

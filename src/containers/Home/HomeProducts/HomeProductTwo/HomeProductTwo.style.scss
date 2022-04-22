@@ -1,0 +1,28 @@
+@use "../../../../sass/utils";
+
+.product-home-two {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: utils.rem(32);
+  padding: utils.rem(101) utils.rem(24);
+  border-radius: utils.rem(8);
+  background-image: url(../../../../assets/home/mobile/image-speaker-zx7.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include utils.breakpoint(utils.$size-md) {
+    padding-left: utils.rem(62);
+    background-image: url(../../../../assets/home/tablet/image-speaker-zx7.jpg);
+  }
+
+  @include utils.breakpoint(utils.$size-lg) {
+    padding-left: utils.rem(95);
+    background-image: url(../../../../assets/home/desktop/image-speaker-zx7.jpg);
+  }
+
+  .product-home-two-title {
+    font-size: utils.rem(28);
+    text-transform: uppercase;
+  }
+}

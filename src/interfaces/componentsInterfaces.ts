@@ -6,7 +6,7 @@ export interface ComponentProps {
   style?: CSSProperties;
 }
 
-type buttonVariants = "default" | "black" | "outline";
+type buttonVariants = "default" | "black" | "outline" | "gray";
 type buttonTypes = "link" | "submit" | "button" | "reset";
 
 export interface ButtonProps extends ComponentProps {

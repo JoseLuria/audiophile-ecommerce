@@ -16,7 +16,7 @@ const BestAudioSection = () => {
 
   return (
     <section className="best-audio-section">
-      <img className="best-audio-image" src={bestAudioImage} alt="" />
+      <img className="best-audio-image" src={bestAudioImage} alt="Best audio gear" />
       <div className="best-audio-content">
         <h2 className="best-audio-title">
           Bringing you the <span className="best-audio-title-span">best</span> audio gear

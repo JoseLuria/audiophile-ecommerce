@@ -1,0 +1,54 @@
+@use "../../../../sass/utils";
+
+.product-home-three {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: utils.rem(24);
+
+  @include utils.breakpoint(utils.$size-md) {
+    flex-direction: row;
+    gap: utils.rem(11);
+  }
+
+  @include utils.breakpoint(utils.$size-md) {
+    gap: utils.rem(30);
+  }
+
+  .product-home-three-image {
+    width: 100%;
+    border-radius: utils.rem(8);
+
+    @include utils.breakpoint(utils.$size-md) {
+      width: 48%;
+      gap: utils.rem(30);
+    }
+  }
+
+  .product-home-three-content {
+    width: 100%;
+    background-color: utils.$light-gray;
+    border-radius: utils.rem(8);
+    padding: utils.rem(41) utils.rem(24);
+    display: flex;
+    flex-direction: column;
+    gap: utils.rem(32);
+
+    @include utils.breakpoint(utils.$size-md) {
+      height: 100%;
+      width: 48%;
+      padding: utils.rem(41);
+      justify-content: center;
+    }
+
+    @include utils.breakpoint(utils.$size-lg) {
+      padding: utils.rem(41) utils.rem(95);
+    }
+
+    .product-home-three-title {
+      font-size: utils.rem(28);
+      text-transform: uppercase;
+    }
+  }
+}
