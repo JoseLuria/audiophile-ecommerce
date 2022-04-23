@@ -1,12 +1,7 @@
 import { useState, useEffect } from "react";
+import { ResponsiveImages } from "../interfaces/componentsInterfaces";
 
-interface UseScreenParams {
-  mobile: string;
-  tablet: string;
-  desktop: string;
-}
-
-export const useResponsiveImages = (ImagesObject: UseScreenParams) => {
+export const useResponsiveImages = (ImagesObject: ResponsiveImages) => {
   const [screenSize, setScreenSize] = useState<number>(window.innerWidth);
 
   useEffect(() => {

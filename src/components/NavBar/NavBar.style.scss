@@ -3,7 +3,6 @@
 .navbar {
   width: 100%;
   background-color: utils.$black;
-  padding: 0 utils.rem(24);
   position: fixed;
   top: 0;
   z-index: 1;
@@ -35,7 +34,7 @@
 
     .navbar-btn-menu {
       position: absolute;
-      left: 0;
+      left: utils.rem(24);
 
       @include utils.breakpoint(utils.$size-md) {
         position: static;
@@ -49,7 +48,7 @@
 
     .navbar-btn-cart {
       position: absolute;
-      right: 0;
+      right: utils.rem(24);
 
       @include utils.breakpoint(utils.$size-md) {
         position: static;

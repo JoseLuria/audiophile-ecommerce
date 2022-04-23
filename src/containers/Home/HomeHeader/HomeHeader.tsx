@@ -7,17 +7,17 @@ import Text from "../../../components/Text/Text";
 import Button from "../../../components/Button/Button";
 
 const HomeHeader = () => {
-  const HeroImagesObject = {
+  const heroImageObject = {
     desktop: HeroDesktop,
     tablet: HeroTablet,
     mobile: HeroMobile,
   };
 
-  const HeroImage = useResponsiveImages(HeroImagesObject);
+  const heroImage = useResponsiveImages(heroImageObject);
 
   return (
     <header className="home-header">
-      <img className="hero-image" src={HeroImage} alt="Hero Image" />
+      <img className="hero-image" src={heroImage} alt="Hero Image" />
       <div className="home-header-container">
         <section className="home-header-content">
           <Text color="white" type="new">

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { CategoryHeader, CategoryMain } from "../../containers/Category";
 import { useParams } from "react-router-dom";
 import productData from "../../data/products.json";
+import { StoreProduct } from "../../interfaces/componentsInterfaces";
 
 const Category = () => {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ const Category = () => {
   const products = productData.filter(({ category }) => category === id);
 
   useEffect(() => {
-    if (products.length === 0) {
+    if (products.length <= 0) {
       navigate("/");
     }
   }, [id]);
@@ -18,7 +19,7 @@ const Category = () => {
   return (
     <>
       <CategoryHeader category={id} />
-      <CategoryMain />
+      <CategoryMain products={products as StoreProduct[]} />
     </>
   );
 };

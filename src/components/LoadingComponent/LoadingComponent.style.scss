@@ -1,0 +1,27 @@
+@use "../../sass/utils";
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+
+  .lading-loader {
+    margin: auto;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    border: solid 12px utils.$light-beige;
+    border-top: solid 12px utils.$beige;
+    animation: spin 1s linear infinite;
+  }
+}

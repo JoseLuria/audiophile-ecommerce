@@ -25,3 +25,46 @@ export interface TextProps extends ComponentProps {
   align?: textAlign;
   type?: textType;
 }
+
+type productCategory = "earphones" | "headphones" | "speakers";
+
+export interface ResponsiveImages {
+  mobile: string;
+  tablet: string;
+  desktop: string;
+}
+
+interface IncludeElement {
+  quantity: number;
+  item: string;
+}
+
+interface OtherProduct {
+  slug: string;
+  name: string;
+  image: ResponsiveImages;
+}
+
+export interface StoreProduct {
+  id: number;
+  slug: string;
+  name: string;
+  image: ResponsiveImages;
+  category: productCategory;
+  categoryImage: ResponsiveImages;
+  new: boolean;
+  price: number;
+  description: string;
+  features: string;
+  includes: IncludeElement[];
+  gallery: {
+    first: ResponsiveImages;
+    second: ResponsiveImages;
+    third: ResponsiveImages;
+  };
+  others: OtherProduct[];
+}
+
+export interface IndividualProductProps {
+  product: StoreProduct;
+}
