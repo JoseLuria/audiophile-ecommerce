@@ -1,0 +1,71 @@
+@use "../../sass/utils";
+
+.cart-section {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .cart-list-size {
+      font-size: utils.rem(18);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .remove-all-button {
+      color: utils.color-opacity(0.5, utils.$black);
+      text-decoration: underline;
+      font-weight: 500;
+      font-size: utils.rem(15);
+
+      @include utils.hover {
+        color: utils.$beige;
+      }
+    }
+  }
+
+  .cart-list {
+    display: flex;
+    flex-direction: column;
+    gap: utils.rem(24);
+    height: utils.rem(240);
+    overflow: auto;
+    scrollbar-width: none;
+    // scrollbar-width: utils.rem(10);
+    // scrollbar-color: utils.$light-gray transparent;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+
+    // &::-webkit-scrollbar-thumb {
+    //   background-color: utils.$light-gray;
+    //   border-left: 4px white solid;
+    //   background-clip: padding-box;
+    // }
+
+    .empty-text {
+      margin: auto;
+      font-weight: 700;
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .total-text {
+      text-transform: uppercase;
+    }
+    .total-price {
+      font-weight: 700;
+      font-size: utils.rem(18);
+    }
+  }
+}

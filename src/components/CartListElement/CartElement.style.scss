@@ -1,0 +1,49 @@
+@use "../../sass/utils";
+
+.cart-list-item {
+  height: utils.rem(64);
+  display: flex;
+  align-items: center;
+
+  .product-list-image {
+    width: utils.rem(64);
+    height: utils.rem(64);
+    margin-right: utils.rem(16);
+  }
+
+  .product-list-info {
+    font-weight: 700;
+
+    .product-list-price {
+      color: utils.color-opacity(0.5, utils.$black);
+    }
+  }
+
+  .product-list-actions {
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: utils.rem(96);
+    padding: 0 utils.rem(11);
+    height: utils.rem(32);
+    background-color: utils.$light-gray;
+    font-weight: 700;
+
+    .product-list-button {
+      display: flex;
+      width: utils.rem(16);
+      height: utils.rem(18);
+
+      @include utils.hover {
+        transition-duration: 0;
+        filter: brightness(0) saturate(100%) invert(76%) sepia(17%) saturate(7197%)
+          hue-rotate(326deg) brightness(90%) contrast(87%);
+      }
+
+      img {
+        margin: auto;
+      }
+    }
+  }
+}

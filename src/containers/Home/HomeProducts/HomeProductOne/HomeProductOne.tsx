@@ -17,7 +17,9 @@ const HomeProductOne = () => {
 
   return (
     <div className="product-home-one">
-      <img className="product-home-one-image" src={productOneImage} alt="ZX9 Speaker" />
+      <div className="product-home-one-image-container">
+        <img className="product-home-one-image" src={productOneImage} alt="ZX9 Speaker" />
+      </div>
       <div className="product-home-one-content">
         <h2 className="product-home-one-title">ZX9 Speaker</h2>
         <Text className="product-home-one-text" color="white">

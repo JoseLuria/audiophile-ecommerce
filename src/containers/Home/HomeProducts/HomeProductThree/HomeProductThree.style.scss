@@ -2,27 +2,24 @@
 
 .product-home-three {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: utils.rem(24);
 
   @include utils.breakpoint(utils.$size-md) {
-    flex-direction: row;
-    gap: utils.rem(11);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: utils.rem(11);
   }
 
   @include utils.breakpoint(utils.$size-md) {
-    gap: utils.rem(30);
+    column-gap: utils.rem(30);
   }
 
   .product-home-three-image {
     width: 100%;
     border-radius: utils.rem(8);
+    margin-bottom: utils.rem(24);
 
     @include utils.breakpoint(utils.$size-md) {
-      width: 48%;
-      gap: utils.rem(30);
+      margin-bottom: 0;
     }
   }
 
@@ -31,15 +28,12 @@
     background-color: utils.$light-gray;
     border-radius: utils.rem(8);
     padding: utils.rem(41) utils.rem(24);
-    display: flex;
-    flex-direction: column;
-    gap: utils.rem(32);
 
     @include utils.breakpoint(utils.$size-md) {
-      height: 100%;
-      width: 48%;
-      padding: utils.rem(41);
+      display: flex;
+      flex-direction: column;
       justify-content: center;
+      padding: utils.rem(41);
     }
 
     @include utils.breakpoint(utils.$size-lg) {
@@ -49,6 +43,7 @@
     .product-home-three-title {
       font-size: utils.rem(28);
       text-transform: uppercase;
+      margin-bottom: utils.rem(32);
     }
   }
 }

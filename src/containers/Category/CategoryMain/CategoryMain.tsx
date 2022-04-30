@@ -1,19 +1,15 @@
-import MainContainer from "../../Shared/MainContainer";
+import MainContainer from "../../Shared/MainContainer/MainContainer";
 import CategoriesSection from "../../../components/CategoriesSection/CategoriesSection";
 import BestAudioSection from "../../../components/BestAudioSection/BestAudioSection";
-import { StoreProduct } from "../../../interfaces/componentsInterfaces";
+import { MultipleProductsProps } from "../../../typescript/interfaces";
 import CategoryProduct from "../CategoryProduct/CategoryProduct";
 
-interface CategoryProps {
-  products: StoreProduct[];
-}
-
-const CategoryMain = ({ products }: CategoryProps) => {
+const CategoryMain = ({ products }: MultipleProductsProps) => {
   return (
     <MainContainer>
       <>
-        {products.map((product) => (
-          <CategoryProduct key={product.id} product={product} />
+        {products.map((product, index) => (
+          <CategoryProduct key={product.id} index={index} product={product} />
         ))}
       </>
       <CategoriesSection />

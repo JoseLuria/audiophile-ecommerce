@@ -1,15 +1,16 @@
 import "./NavList.style.scss";
 import categories from "../../data/categories.json";
 import { Link } from "react-router-dom";
+import { OnlyFunctionProps } from "../../typescript/interfaces";
 
-const NavList = () => {
+const NavList = ({ action }: OnlyFunctionProps) => {
   const categoriesList = [{ name: "home", href: "/" }, ...categories];
 
   return (
     <ul className="nav-list">
       {categoriesList.map(({ name, href }, index) => (
         <li key={index}>
-          <Link className="nav-list-item" to={`/category/${href}`}>
+          <Link onClick={action} className="nav-list-item" to={`/category/${href}`}>
             {name}
           </Link>
         </li>

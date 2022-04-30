@@ -82,3 +82,53 @@
     border-bottom: none;
   }
 }
+
+.navbar-mobile-menu {
+  width: 100%;
+  background-color: white;
+  padding: utils.rem(35) utils.rem(24);
+  border-radius: 0 0 utils.rem(8) utils.rem(8);
+
+  @include utils.breakpoint(utils.$size-md) {
+    padding: utils.rem(56) utils.rem(40) utils.rem(64);
+  }
+}
+
+.tranparent-background-container {
+  padding: utils.rem(24);
+  display: flex;
+  justify-content: center;
+
+  @include utils.breakpoint(utils.$size-md) {
+    padding: utils.rem(24) utils.rem(40);
+  }
+
+  .shopping-cart-wrapper {
+    width: 100%;
+    max-width: utils.$max-w;
+    display: flex;
+
+    .shopping-cart-container {
+      width: 100%;
+      max-width: utils.rem(377);
+      height: utils.rem(488);
+      border-radius: utils.rem(8);
+      background-color: white;
+      margin-left: auto;
+      padding: utils.rem(32) utils.rem(28);
+      display: flex;
+      flex-direction: column;
+      gap: utils.rem(24);
+
+      @include utils.breakpoint(utils.$size-md) {
+        padding: utils.rem(31) utils.rem(33);
+      }
+
+      .checkout-button {
+        margin-top: auto;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}

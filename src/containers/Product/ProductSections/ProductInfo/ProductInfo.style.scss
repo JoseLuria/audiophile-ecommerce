@@ -1,0 +1,96 @@
+@use "../../../../sass/utils";
+
+.product-info-section {
+  margin-top: utils.rem(24);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: utils.rem(40);
+
+  @include utils.breakpoint(utils.$size-md) {
+    gap: utils.rem(96);
+    align-items: center;
+    flex-direction: row;
+  }
+
+  @include utils.breakpoint(utils.$size-lg) {
+    margin-top: utils.rem(56);
+    gap: utils.rem(124);
+  }
+
+  .product-image {
+    border-radius: utils.rem(8);
+
+    @include utils.breakpoint(utils.$size-md) {
+      width: utils.rem(281);
+    }
+
+    @include utils.breakpoint(utils.$size-lg) {
+      flex: 1;
+    }
+  }
+
+  .product-info-text {
+    @include utils.breakpoint(utils.$size-lg) {
+      flex: 1;
+    }
+
+    .product-title {
+      font-size: utils.rem(28);
+      text-transform: uppercase;
+      padding: utils.rem(24) 0;
+
+      @include utils.breakpoint(utils.$size-md) {
+        padding: utils.rem(17) 0 utils.rem(32);
+      }
+
+      @include utils.breakpoint(utils.$size-lg) {
+        font-size: utils.rem(40);
+      }
+    }
+
+    .product-price {
+      font-size: utils.rem(18);
+      font-weight: 700;
+      padding: utils.rem(24) 0 utils.rem(31);
+
+      @include utils.breakpoint(utils.$size-md) {
+        padding: utils.rem(31) 0;
+      }
+    }
+
+    .product-buttons {
+      flex-wrap: wrap;
+      display: flex;
+      align-items: center;
+      gap: utils.rem(16);
+
+      .quantity-section {
+        background-color: utils.$light-gray;
+        width: utils.rem(120);
+        height: utils.rem(48);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 utils.rem(15);
+        font-weight: 700;
+
+        .quantity-button {
+          display: flex;
+          width: utils.rem(16);
+          height: utils.rem(18);
+
+          @include utils.hover {
+            transition-duration: 0;
+            filter: brightness(0) saturate(100%) invert(76%) sepia(17%) saturate(7197%)
+              hue-rotate(326deg) brightness(90%) contrast(87%);
+          }
+
+          img {
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+}

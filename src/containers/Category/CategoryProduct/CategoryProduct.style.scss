@@ -11,6 +11,7 @@
   &-image {
     width: 100%;
     margin-bottom: utils.rem(32);
+    border-radius: utils.rem(8);
 
     @include utils.breakpoint(utils.$size-md) {
       margin-bottom: utils.rem(52);

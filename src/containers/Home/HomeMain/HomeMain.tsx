@@ -1,5 +1,5 @@
 import "./HomeMain.style.scss";
-import MainContainer from "../../Shared/MainContainer";
+import MainContainer from "../../Shared/MainContainer/MainContainer";
 import CategoriesSection from "../../../components/CategoriesSection/CategoriesSection";
 import BestAudioSection from "../../../components/BestAudioSection/BestAudioSection";
 import { HomeProductOne, HomeProductTwo, HomeProductThree } from "../HomeProducts";

@@ -1,0 +1,42 @@
+@use "../../../../sass/utils";
+
+.product-gallery {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: utils.rem(20);
+
+  @include utils.breakpoint(utils.$size-md) {
+    display: grid;
+    grid-template-columns: 1fr 1.45fr;
+    column-gap: utils.rem(30);
+    place-items: center;
+  }
+
+  @include utils.breakpoint(utils.$size-lg) {
+    column-gap: utils.rem(35);
+  }
+
+  img {
+    width: 100%;
+    border-radius: utils.rem(8);
+  }
+
+  .gallery-left {
+    height: 100%;
+
+    @include utils.breakpoint(utils.$size-md) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .first-image-gallery {
+      margin-bottom: utils.rem(20);
+
+      @include utils.breakpoint(utils.$size-md) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

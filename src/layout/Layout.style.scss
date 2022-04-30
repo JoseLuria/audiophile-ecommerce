@@ -5,4 +5,13 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+
+  .show-message-button {
+    background-color: blue;
+    position: fixed;
+    right: utils.rem(20);
+    top: utils.rem(100);
+    width: utils.rem(120);
+    height: utils.rem(60);
+  }
 }

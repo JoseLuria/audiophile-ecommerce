@@ -1,0 +1,33 @@
+@use "../../../sass/utils";
+
+.related-products {
+  &-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: utils.rem(24);
+    margin-bottom: utils.rem(40);
+
+    @include utils.breakpoint(utils.$size-md) {
+      font-size: utils.rem(32);
+      margin-bottom: utils.rem(56);
+    }
+
+    @include utils.breakpoint(utils.$size-lg) {
+      margin-bottom: utils.rem(64);
+    }
+  }
+
+  .related-products-container {
+    width: 100%;
+
+    @include utils.breakpoint(utils.$size-md) {
+      display: grid;
+      column-gap: utils.rem(11);
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include utils.breakpoint(utils.$size-lg) {
+      column-gap: utils.rem(30);
+    }
+  }
+}

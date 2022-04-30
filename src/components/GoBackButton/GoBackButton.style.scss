@@ -1,0 +1,12 @@
+@use "../../sass/utils";
+
+.go-back-button {
+  width: fit-content;
+  font-weight: 500;
+  font-size: utils.rem(15);
+  color: utils.color-opacity(0.5, utils.$black);
+
+  @include utils.hover {
+    color: utils.$beige;
+  }
+}

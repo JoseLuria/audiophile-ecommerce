@@ -1,5 +1,11 @@
+import { CheckoutMain } from "../../containers/Checkout";
+
 const Checkout = () => {
-  return <div>Checkout</div>;
+  return (
+    <>
+      <CheckoutMain />
+    </>
+  );
 };
 
 export default Checkout;

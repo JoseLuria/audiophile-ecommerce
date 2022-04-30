@@ -1,0 +1,12 @@
+@use "../../../sass/utils";
+
+.black-container {
+  position: fixed;
+  top: utils.rem(90);
+  left: 0;
+  width: 100%;
+  height: calc(100% - utils.rem(90));
+  background-color: utils.color-opacity(0.4, utils.$black);
+  z-index: 2;
+  overflow: auto;
+}

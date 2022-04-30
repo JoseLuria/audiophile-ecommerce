@@ -1,0 +1,21 @@
+@use "../../../../sass/utils";
+
+.individual-related-product {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: utils.rem(56);
+  font-size: utils.rem(24);
+  text-transform: uppercase;
+  gap: utils.rem(32);
+  align-items: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  img {
+    width: 100%;
+    border-radius: utils.rem(8);
+  }
+}

@@ -1,4 +1,13 @@
 import { ReactChild, CSSProperties } from "react";
+import {
+  buttonVariants,
+  buttonTypes,
+  textColors,
+  textAlign,
+  textType,
+  mainContainerVariants,
+  productCategory,
+} from "./types";
 
 export interface ComponentProps {
   children: ReactChild | ReactChild[];
@@ -6,19 +15,12 @@ export interface ComponentProps {
   style?: CSSProperties;
 }
 
-type buttonVariants = "default" | "black" | "outline" | "gray";
-type buttonTypes = "link" | "submit" | "button" | "reset";
-
 export interface ButtonProps extends ComponentProps {
   variant?: buttonVariants;
   type?: buttonTypes;
   href?: string;
-  action?: () => any;
+  action?: () => void;
 }
-
-type textColors = "black" | "white" | "beige";
-type textAlign = "left" | "center" | "right";
-type textType = "new" | "default";
 
 export interface TextProps extends ComponentProps {
   color?: textColors;
@@ -26,12 +28,14 @@ export interface TextProps extends ComponentProps {
   type?: textType;
 }
 
-type productCategory = "earphones" | "headphones" | "speakers";
-
 export interface ResponsiveImages {
   mobile: string;
   tablet: string;
   desktop: string;
+}
+
+export interface MainContainerProps extends ComponentProps {
+  variant?: mainContainerVariants;
 }
 
 interface IncludeElement {
@@ -39,10 +43,16 @@ interface IncludeElement {
   item: string;
 }
 
-interface OtherProduct {
+export interface OtherProduct {
   slug: string;
   name: string;
   image: ResponsiveImages;
+}
+
+export interface Gallery {
+  first: ResponsiveImages;
+  second: ResponsiveImages;
+  third: ResponsiveImages;
 }
 
 export interface StoreProduct {
@@ -57,14 +67,26 @@ export interface StoreProduct {
   description: string;
   features: string;
   includes: IncludeElement[];
-  gallery: {
-    first: ResponsiveImages;
-    second: ResponsiveImages;
-    third: ResponsiveImages;
-  };
+  gallery: Gallery;
   others: OtherProduct[];
 }
 
 export interface IndividualProductProps {
   product: StoreProduct;
+}
+
+export interface MultipleProductsProps {
+  products: StoreProduct[];
+}
+
+export interface OnlyFunctionProps {
+  action?: () => void;
+}
+
+export interface CartProduct {
+  id: number;
+  name: string;
+  image: ResponsiveImages;
+  price: number;
+  quantity: number;
 }

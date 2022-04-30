@@ -1,5 +1,5 @@
 import "./Button.style.scss";
-import { ButtonProps } from "../../interfaces/componentsInterfaces";
+import { ButtonProps } from "../../typescript/interfaces";
 import ArrowRightIcon from "../../assets/shared/desktop/icon-arrow-right.svg";
 import { Link } from "react-router-dom";
 

@@ -1,0 +1,65 @@
+@use "../../../sass/utils";
+
+.main-container-wrapper {
+  background-color: utils.$white;
+  display: flex;
+  justify-content: center;
+
+  .main-container {
+    width: 100%;
+    max-width: utils.$max-w;
+    display: flex;
+    flex-direction: column;
+    gap: utils.rem(120);
+
+    @include utils.breakpoint(utils.$size-md) {
+      gap: utils.rem(96);
+    }
+
+    @include utils.breakpoint(utils.$size-lg) {
+      gap: utils.rem(160);
+    }
+  }
+}
+
+.layout-category {
+  padding: utils.rem(40) utils.rem(24) utils.rem(120);
+
+  @include utils.breakpoint(utils.$size-md) {
+    padding: utils.rem(96) utils.rem(40);
+  }
+
+  @include utils.breakpoint(utils.$size-lg) {
+    padding-top: utils.rem(120);
+    padding-bottom: utils.rem(200);
+  }
+}
+
+.layout-product {
+  margin-top: utils.rem(90);
+  padding: utils.rem(16) utils.rem(24) utils.rem(120);
+
+  @include utils.breakpoint(utils.$size-md) {
+    padding: utils.rem(33) utils.rem(40) utils.rem(120);
+  }
+
+  @include utils.breakpoint(utils.$size-lg) {
+    padding-top: utils.rem(79);
+    padding-bottom: utils.rem(160);
+  }
+}
+
+.layout-checkout {
+  margin-top: utils.rem(90);
+  padding: utils.rem(16) utils.rem(24) utils.rem(96);
+
+  @include utils.breakpoint(utils.$size-md) {
+    padding: utils.rem(48) utils.rem(40) utils.rem(116);
+  }
+
+  @include utils.breakpoint(utils.$size-lg) {
+    background-color: utils.$light-gray;
+    padding-top: utils.rem(79);
+    padding-bottom: utils.rem(141);
+  }
+}

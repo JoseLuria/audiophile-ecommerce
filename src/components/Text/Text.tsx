@@ -1,5 +1,5 @@
 import "./Text.style.scss";
-import { TextProps } from "../../interfaces/componentsInterfaces";
+import { TextProps } from "../../typescript/interfaces";
 
 const Text = ({ children, style, className, color, align, type }: TextProps) => {
   return (

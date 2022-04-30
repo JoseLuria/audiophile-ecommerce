@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ResponsiveImages } from "../interfaces/componentsInterfaces";
+import { ResponsiveImages } from "../typescript/interfaces";
 
 export const useResponsiveImages = (ImagesObject: ResponsiveImages) => {
   const [screenSize, setScreenSize] = useState<number>(window.innerWidth);

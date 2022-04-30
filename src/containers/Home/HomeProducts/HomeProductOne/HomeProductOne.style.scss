@@ -5,10 +5,6 @@
   background-color: utils.$beige;
   padding: utils.rem(55) utils.rem(24);
   border-radius: utils.rem(8);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
   background-image: url(../../../../assets/home/desktop/pattern-circles.svg);
   background-size: utils.rem(500);
   background-position: center -100px;
@@ -21,28 +17,48 @@
   }
 
   @include utils.breakpoint(utils.$size-lg) {
-    overflow: hidden;
-    flex-direction: row;
+    height: utils.rem(560);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: utils.rem(138);
+    place-items: center;
     background-position: -90px -50px;
-    padding: utils.rem(0) utils.rem(95);
+    padding: 0 utils.rem(95);
   }
 
-  .product-home-one-image {
-    margin-bottom: utils.rem(32);
-    width: utils.rem(172.25);
-
-    @include utils.breakpoint(utils.$size-md) {
-      width: utils.rem(197.21);
-    }
+  .product-home-one-image-container {
+    width: fit-content;
+    margin: 0 auto;
 
     @include utils.breakpoint(utils.$size-lg) {
-      position: absolute;
-      bottom: -50px;
-      width: utils.rem(410.23);
+      display: flex;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .product-home-one-image {
+      margin-bottom: utils.rem(32);
+      width: utils.rem(172.25);
+
+      @include utils.breakpoint(utils.$size-md) {
+        width: utils.rem(197.21);
+      }
+
+      @include utils.breakpoint(utils.$size-lg) {
+        margin: auto 0;
+        width: 100%;
+      }
+
+      @include utils.breakpoint(utils.$size-xl) {
+        margin: auto 0 0;
+        position: relative;
+        bottom: utils.rem(-10);
+      }
     }
   }
 
   &-content {
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,7 +69,6 @@
     }
 
     @include utils.breakpoint(utils.$size-lg) {
-      margin: utils.rem(133) 0 utils.rem(124) auto;
       align-items: initial;
     }
 

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { CategoryHeader, CategoryMain } from "../../containers/Category";
 import { useParams } from "react-router-dom";
 import productData from "../../data/products.json";
-import { StoreProduct } from "../../interfaces/componentsInterfaces";
+import { StoreProduct } from "../../typescript/interfaces";
 
 const Category = () => {
   const navigate = useNavigate();

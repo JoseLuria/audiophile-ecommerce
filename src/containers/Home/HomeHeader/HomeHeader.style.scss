@@ -3,11 +3,18 @@
 .home-header {
   width: 100%;
   background-color: utils.$black;
-  display: flex;
   position: relative;
 
   .hero-image {
     width: 100%;
+
+    @include utils.breakpoint(utils.$size-lg) {
+      margin-top: utils.rem(96);
+    }
+
+    @include utils.breakpoint(utils.$size-xl) {
+      margin-top: 0;
+    }
   }
 
   .home-header-container {
@@ -27,6 +34,10 @@
       height: calc(100% - utils.rem(96));
       top: utils.rem(96);
       justify-content: left;
+    }
+
+    @include utils.breakpoint(utils.$size-xl) {
+      padding: 0;
     }
 
     .home-header-content {
