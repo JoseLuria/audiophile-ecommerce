@@ -36,18 +36,10 @@
     height: utils.rem(240);
     overflow: auto;
     scrollbar-width: none;
-    // scrollbar-width: utils.rem(10);
-    // scrollbar-color: utils.$light-gray transparent;
 
     &::-webkit-scrollbar {
       width: 0;
     }
-
-    // &::-webkit-scrollbar-thumb {
-    //   background-color: utils.$light-gray;
-    //   border-left: 4px white solid;
-    //   background-clip: padding-box;
-    // }
 
     .empty-text {
       margin: auto;

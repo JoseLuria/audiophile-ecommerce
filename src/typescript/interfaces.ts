@@ -90,3 +90,16 @@ export interface CartProduct {
   price: number;
   quantity: number;
 }
+
+export interface FormResult {
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+  zip: string;
+  city: string;
+  country: string;
+  pay: "cash" | "e-money";
+  eMoneyNumber?: string;
+  eMoneyPin?: number;
+}

@@ -1,0 +1,47 @@
+@use "../../sass/utils";
+
+.form-input {
+  &-label {
+    font-weight: 700;
+    font-size: utils.rem(12);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: utils.rem(9);
+
+    span {
+      font-weight: 500;
+    }
+  }
+
+  &-element {
+    width: 100%;
+    height: utils.rem(56);
+    border-radius: utils.rem(8);
+    border: utils.rem(1) solid utils.$low-gray;
+    font-size: utils.rem(14);
+    font-weight: 500;
+    padding: 0 utils.rem(24);
+
+    &::placeholder {
+      color: utils.$low-gray;
+    }
+
+    &:focus-visible {
+      border-color: utils.$beige;
+    }
+  }
+}
+
+.form-error {
+  .form-input-label {
+    color: utils.$red;
+  }
+
+  .form-input-element {
+    border: utils.rem(2) solid utils.$red;
+
+    &::placeholder {
+      color: utils.$red;
+    }
+  }
+}

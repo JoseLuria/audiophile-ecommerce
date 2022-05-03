@@ -1,0 +1,63 @@
+@use "../../../../sass/utils";
+
+.checkout-product {
+  margin-top: utils.rem(32);
+  display: flex;
+  flex-direction: column;
+  gap: utils.rem(32);
+  padding: utils.rem(32) utils.rem(24);
+  border-radius: utils.rem(8);
+  background-color: utils.$transparent;
+
+  @include utils.breakpoint(utils.$size-md) {
+    padding: utils.rem(32);
+  }
+
+  @include utils.breakpoint(utils.$size-lg) {
+    margin-top: 0;
+    width: utils.rem(350);
+    border-radius: utils.rem(8);
+    background-color: utils.$transparent;
+  }
+
+  &-title {
+    font-size: utils.rem(18);
+    text-transform: uppercase;
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: column;
+    gap: utils.rem(24);
+  }
+
+  &-prices {
+    text-transform: uppercase;
+
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: utils.rem(8);
+
+      &:nth-last-child(2) {
+        margin-bottom: utils.rem(24);
+      }
+
+      &:nth-last-child(1) {
+        margin-bottom: 0;
+      }
+
+      &-span {
+        font-size: utils.rem(18);
+        font-weight: 700;
+        color: utils.$black;
+      }
+    }
+  }
+}
+
+.checkout-button {
+  width: auto;
+  justify-content: center;
+}

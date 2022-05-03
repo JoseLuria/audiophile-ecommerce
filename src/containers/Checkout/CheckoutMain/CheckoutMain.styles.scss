@@ -1,1 +1,42 @@
 @use "../../../sass/utils";
+
+.checkout-main-container {
+  .main-container {
+    gap: 0;
+
+    .checkout-wrapper {
+      margin-top: utils.rem(24);
+
+      @include utils.breakpoint(utils.$size-lg) {
+        margin-top: utils.rem(52);
+        display: flex;
+        gap: utils.rem(30);
+        align-items: flex-start;
+      }
+
+      .checkout-form-section {
+        padding: utils.rem(24);
+        border-radius: utils.rem(8);
+        background-color: utils.$transparent;
+
+        @include utils.breakpoint(utils.$size-md) {
+          padding: utils.rem(30) utils.rem(28);
+        }
+
+        @include utils.breakpoint(utils.$size-lg) {
+          flex-grow: 1;
+          padding: utils.rem(54) utils.rem(48);
+        }
+
+        &-title {
+          text-transform: uppercase;
+          font-size: utils.rem(28);
+
+          @include utils.breakpoint(utils.$size-md) {
+            font-size: utils.rem(32);
+          }
+        }
+      }
+    }
+  }
+}

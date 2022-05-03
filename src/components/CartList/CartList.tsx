@@ -19,7 +19,7 @@ const CartList = () => {
   return (
     <section className="cart-section">
       <div className="cart-section-header">
-        <p className="cart-list-size">cart {`(${cartList.length})`}</p>
+        <p className="cart-list-size"> cart {`(${cartList.length})`}</p>
 
         <button className="remove-all-button" onClick={handleRemoveAll}>
           Remove all
@@ -35,6 +35,7 @@ const CartList = () => {
               image={image}
               price={price}
               quantity={quantity}
+              type="Cart"
             />
           ))}
         {cartList.length === 0 && <Text className="empty-text">Yor cart is empty</Text>}

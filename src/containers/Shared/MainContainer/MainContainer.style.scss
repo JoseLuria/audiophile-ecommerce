@@ -1,5 +1,17 @@
 @use "../../../sass/utils";
 
+.main-container {
+  gap: utils.rem(120);
+
+  @include utils.breakpoint(utils.$size-md) {
+    gap: utils.rem(96);
+  }
+
+  @include utils.breakpoint(utils.$size-lg) {
+    gap: utils.rem(160);
+  }
+}
+
 .main-container-wrapper {
   background-color: utils.$white;
   display: flex;
@@ -10,15 +22,6 @@
     max-width: utils.$max-w;
     display: flex;
     flex-direction: column;
-    gap: utils.rem(120);
-
-    @include utils.breakpoint(utils.$size-md) {
-      gap: utils.rem(96);
-    }
-
-    @include utils.breakpoint(utils.$size-lg) {
-      gap: utils.rem(160);
-    }
   }
 }
 

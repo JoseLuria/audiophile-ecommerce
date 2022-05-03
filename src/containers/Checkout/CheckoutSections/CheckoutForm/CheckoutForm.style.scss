@@ -1,0 +1,57 @@
+@use "../../../../sass/utils";
+
+.checkout-form-section {
+  padding: utils.rem(24);
+  border-radius: utils.rem(8);
+  background-color: utils.$transparent;
+
+  @include utils.breakpoint(utils.$size-md) {
+    padding: utils.rem(30) utils.rem(28);
+  }
+
+  @include utils.breakpoint(utils.$size-lg) {
+    flex-grow: 1;
+    padding: utils.rem(54) utils.rem(48);
+  }
+
+  &-title {
+    text-transform: uppercase;
+    font-size: utils.rem(28);
+
+    @include utils.breakpoint(utils.$size-md) {
+      font-size: utils.rem(32);
+    }
+  }
+
+  .checkout-form-inputs {
+    margin-top: utils.rem(32);
+    display: flex;
+    flex-direction: column;
+    gap: utils.rem(32);
+
+    .form-details {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: utils.rem(24);
+
+      &-title {
+        font-size: utils.rem(13);
+        margin-bottom: utils.rem(16);
+        text-transform: uppercase;
+        color: utils.$beige;
+      }
+      &-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: utils.rem(24);
+
+        @include utils.breakpoint(utils.$size-md) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          column-gap: utils.rem(16);
+        }
+      }
+    }
+  }
+}

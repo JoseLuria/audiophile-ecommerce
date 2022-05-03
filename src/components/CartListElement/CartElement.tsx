@@ -8,8 +8,13 @@ import { changeQuantity, removeFromCart } from "../../redux/cartSlice/cartSlice"
 import { useEffect } from "react";
 import { handleFormatProductName } from "../../utils/handleFormatProductName";
 import { handleShowMessage } from "../../utils/handleShowMessage";
+import Text from "../Text/Text";
 
-const CartElement = ({ id, name, image, price, quantity }: CartProduct) => {
+interface CartElementProps extends CartProduct {
+  type: "Cart" | "Checkout";
+}
+
+const CartElement = ({ id, name, image, price, quantity, type }: CartElementProps) => {
   const dispatch = useDispatch();
 
   const handleChangeQuantity = (id: number, value: number) => {
@@ -30,15 +35,18 @@ const CartElement = ({ id, name, image, price, quantity }: CartProduct) => {
         <p className="product-list-name">{handleFormatProductName(name)}</p>
         <span className="product-list-price">{handleFormatPrice(price)}</span>
       </div>
-      <div className="product-list-actions">
-        <button onClick={() => handleChangeQuantity(id, -1)} className="product-list-button">
-          <img src={MinusIcon} alt="Minus Icon" />
-        </button>
-        <span>{quantity}</span>
-        <button onClick={() => handleChangeQuantity(id, 1)} className="product-list-button">
-          <img src={PlusIcon} alt="Plus Icon" />
-        </button>
-      </div>
+      {type === "Cart" && (
+        <div className="product-list-actions">
+          <button onClick={() => handleChangeQuantity(id, -1)} className="product-list-button">
+            <img src={MinusIcon} alt="Minus Icon" />
+          </button>
+          <span>{quantity}</span>
+          <button onClick={() => handleChangeQuantity(id, 1)} className="product-list-button">
+            <img src={PlusIcon} alt="Plus Icon" />
+          </button>
+        </div>
+      )}
+      {type === "Checkout" && <Text className="product-list-quantity">x{quantity}</Text>}
     </div>
   );
 };
