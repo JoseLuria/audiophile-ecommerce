@@ -7,8 +7,8 @@ import { CartProduct } from "../../typescript/interfaces";
 import { changeQuantity, removeFromCart } from "../../redux/cartSlice/cartSlice";
 import { useEffect } from "react";
 import { handleFormatProductName } from "../../utils/handleFormatProductName";
-import { handleShowMessage } from "../../utils/handleShowMessage";
 import Text from "../Text/Text";
+import { toast } from "react-toastify";
 
 interface CartElementProps extends CartProduct {
   type: "Cart" | "Checkout";
@@ -24,7 +24,7 @@ const CartElement = ({ id, name, image, price, quantity, type }: CartElementProp
   useEffect(() => {
     if (quantity === 0) {
       dispatch(removeFromCart(id));
-      handleShowMessage("Remove", name, dispatch);
+      toast.error(`${handleFormatProductName(name)} removed from cart`);
     }
   }, [quantity]);
 

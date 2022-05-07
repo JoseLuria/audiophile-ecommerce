@@ -38,6 +38,7 @@ npm run dev
 - [Sass](https://sass-lang.com/)
 - [Framer Motion](https://www.framer.com/docs/animation/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
+- [React Toastify](https://fkhadra.github.io/react-toastify/introduction)
 
 ## License
 

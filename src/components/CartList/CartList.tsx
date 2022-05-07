@@ -4,7 +4,7 @@ import { CartProduct } from "../../typescript/interfaces";
 import CartElement from "../CartListElement/CartElement";
 import { handleFormatPrice } from "../../utils/handleFormatPrice";
 import { removeAll } from "../../redux/cartSlice/cartSlice";
-import { handleShowMessage } from "../../utils/handleShowMessage";
+import { toast } from "react-toastify";
 import Text from "../Text/Text";
 
 const CartList = () => {
@@ -12,8 +12,10 @@ const CartList = () => {
   const dispatch = useDispatch();
 
   const handleRemoveAll = () => {
-    dispatch(removeAll());
-    handleShowMessage("Remove", "All", dispatch);
+    if (cartList.length > 0) {
+      dispatch(removeAll());
+      toast.error("Removed all products");
+    }
   };
 
   return (

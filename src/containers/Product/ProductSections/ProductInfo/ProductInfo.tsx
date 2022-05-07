@@ -9,7 +9,8 @@ import MinusIcon from "../../../../assets/shared/desktop/minus-icon.svg";
 import { handleFormatPrice } from "../../../../utils/handleFormatPrice";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../../redux/cartSlice/cartSlice";
-import { handleShowMessage } from "../../../../utils/handleShowMessage";
+import { toast } from "react-toastify";
+import { handleFormatProductName } from "../../../../utils/handleFormatProductName";
 
 type ProductInfoProps = Pick<
   StoreProduct,
@@ -40,7 +41,7 @@ const ProductInfo = ({ id, name, new: isNew, description, price, image }: Produc
 
     dispatch(addToCart(newProduct));
     setQuantity(1);
-    handleShowMessage("Add", name, dispatch);
+    toast.success(`${handleFormatProductName(name)} added to cart`);
   };
 
   return (
