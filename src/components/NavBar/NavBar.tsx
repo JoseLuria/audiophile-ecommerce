@@ -46,7 +46,7 @@ const NavBar = () => {
           <NavList action={() => handleRemoveElement(setShowCart)} />
 
           <button onClick={handleShowCart} className="navbar-btn-cart">
-            <img width={23.33} height={20} src={ShoppingCartIcon} alt="Shopping Cart Icon" />
+            <img width={23} height={20} src={ShoppingCartIcon} alt="Shopping Cart Icon" />
           </button>
         </div>
       </nav>
