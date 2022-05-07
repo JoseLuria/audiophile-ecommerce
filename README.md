@@ -1,6 +1,6 @@
 # 🤖Audiophile e-commerce website
 
-A multi-page e-commerce website challenge fron Frontend Mentor
+A multi-page e-commerce website challenge from Frontend Mentor
 
 ## 🖼️ Screenshots
 
