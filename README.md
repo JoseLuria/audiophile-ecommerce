@@ -1,6 +1,7 @@
 # 🤖Audiophile e-commerce website
 
 A multi-page e-commerce website challenge from Frontend Mentor
+[You can see the live site here](https://audiphile-ecommerce.netlify.app/)
 
 ## 🖼️ Screenshots
 
