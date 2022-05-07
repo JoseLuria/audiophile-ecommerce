@@ -1,6 +1,7 @@
 @use "../../../../sass/utils";
 
 .checkout-form-section {
+  flex: 1;
   padding: utils.rem(24);
   border-radius: utils.rem(8);
   background-color: utils.$transparent;
@@ -54,4 +55,54 @@
       }
     }
   }
+}
+
+.form-radio-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: utils.rem(16);
+
+  .radio-input-container {
+    height: utils.rem(56);
+    padding: 0 utils.rem(16);
+    display: flex;
+    align-items: center;
+    gap: utils.rem(16);
+    font-size: utils.rem(14);
+    font-weight: 700;
+    border-radius: utils.rem(8);
+    border: solid utils.rem(1) utils.$low-gray;
+
+    @include utils.hover {
+      outline: none;
+      border: solid utils.rem(1) utils.$beige;
+    }
+
+    input[type="radio"] {
+      appearance: none;
+      cursor: pointer;
+      width: utils.rem(20);
+      height: utils.rem(20);
+      border: solid utils.rem(1) utils.$low-gray;
+      border-radius: 50%;
+      display: flex;
+
+      &:checked {
+        &::before {
+          content: "";
+          margin: auto;
+          width: utils.rem(10);
+          height: utils.rem(10);
+          border-radius: 100%;
+          background-color: utils.$beige;
+        }
+      }
+    }
+  }
+}
+
+.cash-section {
+  display: flex;
+  align-items: center;
+  gap: utils.rem(32);
 }

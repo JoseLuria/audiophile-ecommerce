@@ -1,16 +1,24 @@
 import "./CheckoutSummary.style.scss";
-import { useSelector } from "react-redux";
 import Text from "../../../../components/Text/Text";
 import CartElement from "../../../../components/CartListElement/CartElement";
 import { CartProduct } from "../../../../typescript/interfaces";
 import { handleFormatPrice } from "../../../../utils/handleFormatPrice";
 import Button from "../../../../components/Button/Button";
 
-const CheckoutSummary = () => {
-  const { cartList, totalPrice } = useSelector((state: any) => state.cart);
+interface CheckoutSummaryProps {
+  cartList: CartProduct[];
+  totalPrice: number;
+  shippingPrice: number;
+  grandTotalPrice: number;
+}
 
+const CheckoutSummary = ({
+  cartList,
+  totalPrice,
+  shippingPrice,
+  grandTotalPrice,
+}: CheckoutSummaryProps) => {
   const vatPrice = cartList.length > 0 ? totalPrice * 0.2 : 0;
-  const shippingPrice = cartList.length > 0 ? 50 : 0;
 
   return (
     <section className="checkout-product">
@@ -47,11 +55,15 @@ const CheckoutSummary = () => {
         <Text className="checkout-product-prices-item">
           Grand Total
           <span className="checkout-product-prices-item-span">
-            {handleFormatPrice(totalPrice + shippingPrice)}
+            {handleFormatPrice(grandTotalPrice)}
           </span>
         </Text>
       </div>
-      <Button type="submit" className="checkout-button">
+      <Button
+        type="submit"
+        className="checkout-button"
+        disabled={cartList.length > 0 ? false : true}
+      >
         Continue and Pay
       </Button>
     </section>

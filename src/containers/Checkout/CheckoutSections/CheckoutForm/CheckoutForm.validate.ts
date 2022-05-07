@@ -28,3 +28,23 @@ export const InputPhoneValue = {
     message: "Wrong format",
   },
 };
+
+export const InputEmoneyNumber = {
+  required: true,
+  minLength: 9,
+  maxLength: 9,
+  pattern: {
+    value: /^(0|[1-9]\d*)(\.\d+)?$/,
+    message: "Wrong format",
+  },
+};
+
+export const InputEmoneyPin = {
+  required: true,
+  minLength: 4,
+  maxLength: 4,
+  pattern: {
+    value: /^(0|[1-9]\d*)(\.\d+)?$/,
+    message: "Wrong format",
+  },
+};

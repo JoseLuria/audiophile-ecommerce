@@ -3,7 +3,7 @@ import { ButtonProps } from "../../typescript/interfaces";
 import ArrowRightIcon from "../../assets/shared/desktop/icon-arrow-right.svg";
 import { Link } from "react-router-dom";
 
-const Button = ({ children, variant, className, style, href, type, action }: ButtonProps) => {
+const Button = ({ children, variant, className, style, href, type, action, disabled }: ButtonProps) => {
   const componentStyles = `btn-styles ${variant ? `btn-${variant}` : "btn-default"} ${className}`;
   const showIcon = variant === "outline" && <img src={ArrowRightIcon} alt="Arrow Right Icon" />;
 
@@ -22,6 +22,7 @@ const Button = ({ children, variant, className, style, href, type, action }: But
           type={type ? type : "button"}
           style={style}
           className={componentStyles}
+          disabled={disabled}
         >
           {children}
           {showIcon}

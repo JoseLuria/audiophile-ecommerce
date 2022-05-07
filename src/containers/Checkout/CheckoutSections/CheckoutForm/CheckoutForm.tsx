@@ -7,7 +7,12 @@ import {
   InputZipValues,
   InputEmailValues,
   InputPhoneValue,
+  InputEmoneyNumber,
+  InputEmoneyPin,
 } from "./CheckoutForm.validate";
+import { useState } from "react";
+import CashIcon from "../../../../assets/shared/desktop/cash-icon.svg";
+import Text from "../../../../components/Text/Text";
 
 interface CheckoutFormProps {
   register: UseFormRegister<FormResult>;
@@ -15,6 +20,8 @@ interface CheckoutFormProps {
 }
 
 const CheckoutForm = ({ register, formState }: CheckoutFormProps) => {
+  const [showCashSection, setShowCashSection] = useState(true);
+
   const { errors } = formState;
 
   return (
@@ -96,8 +103,66 @@ const CheckoutForm = ({ register, formState }: CheckoutFormProps) => {
         <section className="form-details">
           <h2 className="form-details-title">Payment Details</h2>
           <div className="form-details-inputs">
-            <p></p>
+            <p className="form-input-label">Payment Method</p>
+            <div className="form-radio-inputs">
+              <label tabIndex={0} className="radio-input-container" htmlFor="pay">
+                <input
+                  onClick={() => setShowCashSection(false)}
+                  {...register("pay")}
+                  type="radio"
+                  name="pay"
+                  value={"e-money"}
+                  id="pay"
+                />
+                e-Money
+              </label>
+              <label tabIndex={0} className="radio-input-container" htmlFor="pay">
+                <input
+                  onClick={() => setShowCashSection(true)}
+                  {...register("pay")}
+                  type="radio"
+                  name="pay"
+                  value={"cash"}
+                  id="pay"
+                  defaultChecked
+                />
+                Cash on Delivery
+              </label>
+            </div>
           </div>
+          {showCashSection ? (
+            <div className="cash-section">
+              <img src={CashIcon} alt="cash-icon" />
+              <Text>
+                The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier
+                arrives at your residence. Just make sure your address is correct so that your order
+                will not be cancelled.
+              </Text>
+            </div>
+          ) : (
+            <div className="form-details-inputs">
+              <InputContainer
+                label="e-Money Number"
+                error={errors.eMoneyNumber}
+                htmlFor="eMoneyNumber"
+              >
+                <input
+                  {...register("eMoneyNumber", InputEmoneyNumber)}
+                  className="form-input-element"
+                  id="eMoneyNumber"
+                  placeholder="238521993"
+                />
+              </InputContainer>
+              <InputContainer label="e-Money PIN" error={errors.eMoneyPin} htmlFor="eMoneyPin">
+                <input
+                  {...register("eMoneyPin", InputEmoneyPin)}
+                  className="form-input-element"
+                  id="eMoneyPin"
+                  placeholder="6891"
+                />
+              </InputContainer>
+            </div>
+          )}
         </section>
       </div>
     </section>

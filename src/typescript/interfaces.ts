@@ -20,6 +20,7 @@ export interface ButtonProps extends ComponentProps {
   type?: buttonTypes;
   href?: string;
   action?: () => void;
+  disabled?: boolean;
 }
 
 export interface TextProps extends ComponentProps {
@@ -102,4 +103,9 @@ export interface FormResult {
   pay: "cash" | "e-money";
   eMoneyNumber?: string;
   eMoneyPin?: number;
+}
+
+export interface CheckoutOrder extends FormResult {
+  cartList: CartProduct[];
+  grandTotalPrice: number;
 }

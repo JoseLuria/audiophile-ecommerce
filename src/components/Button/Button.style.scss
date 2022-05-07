@@ -10,12 +10,21 @@
   font-weight: 700;
   padding: 0 utils.rem(30);
   border: 2px solid;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 .btn-default {
   background-color: utils.$beige;
   color: utils.$transparent;
   border-color: utils.$beige;
+
+  &:disabled {
+    background-color: utils.$light-beige;
+    border-color: utils.$light-beige;
+  }
 
   @include utils.hover {
     background-color: utils.$light-beige;
@@ -26,6 +35,11 @@
 .btn-black {
   color: utils.$dark;
   border-color: utils.$dark;
+
+  &:disabled {
+    background-color: utils.$dark;
+    color: utils.$transparent;
+  }
 
   @include utils.hover {
     background-color: utils.$dark;
@@ -40,6 +54,10 @@
   color: utils.color-opacity(0.5, utils.$dark);
   gap: utils.rem(13);
 
+  &:disabled {
+    color: utils.$beige;
+  }
+
   @include utils.hover {
     color: utils.$beige;
   }
@@ -49,6 +67,11 @@
   background-color: utils.$dark;
   color: utils.$transparent;
   border-color: utils.$dark;
+
+  &:disabled {
+    background-color: utils.$gray;
+    border-color: utils.$gray;
+  }
 
   @include utils.hover {
     background-color: utils.$gray;
