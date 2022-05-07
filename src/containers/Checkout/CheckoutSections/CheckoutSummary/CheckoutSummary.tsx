@@ -36,6 +36,7 @@ const CheckoutSummary = ({
               type="Checkout"
             />
           ))}
+        {cartList.length === 0 && <Text>Yor cart is empty</Text>}
       </div>
       <div className="checkout-product-prices">
         <Text className="checkout-product-prices-item">
