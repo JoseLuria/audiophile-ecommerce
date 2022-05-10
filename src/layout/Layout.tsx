@@ -1,9 +1,9 @@
 import "./Layout.style.scss";
+import "react-toastify/dist/ReactToastify.min.css";
 import NavBar from "../components/NavBar/NavBar";
 import Footer from "../components/Footer/Footer";
 import { ComponentProps } from "../typescript/interfaces";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const Layout = ({ children }: ComponentProps) => {
   return (
