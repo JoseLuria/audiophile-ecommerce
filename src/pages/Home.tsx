@@ -1,4 +1,4 @@
-import { HomeHeader, HomeMain } from "../../containers/Home";
+import { HomeHeader, HomeMain } from "../containers/Home";
 
 const Home = () => {
   return (

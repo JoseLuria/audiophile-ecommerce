@@ -1,14 +1,13 @@
 import "./CartElement.style.scss";
+import { toast } from "react-toastify";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { CartProduct } from "../../typescript/interfaces";
+import { changeQuantity, removeFromCart } from "../../redux/cartSlice";
+import { handleFormatPrice, handleFormatProductName } from "../../utils";
 import PlusIcon from "../../assets/shared/desktop/plus-icon.svg";
 import MinusIcon from "../../assets/shared/desktop/minus-icon.svg";
-import { handleFormatPrice } from "../../utils/handleFormatPrice";
-import { CartProduct } from "../../typescript/interfaces";
-import { changeQuantity, removeFromCart } from "../../redux/cartSlice/cartSlice";
-import { useEffect } from "react";
-import { handleFormatProductName } from "../../utils/handleFormatProductName";
 import Text from "../Text/Text";
-import { toast } from "react-toastify";
 
 interface CartElementProps extends CartProduct {
   type: "Cart" | "Checkout";

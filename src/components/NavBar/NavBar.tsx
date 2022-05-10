@@ -1,19 +1,18 @@
 import "./NavBar.style.scss";
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { handleRemoveElement, handleShowElement } from "../../utils";
+import { shoppingCartAnimationVariants, navBarMenuAnimationVariants } from "./NavBar.animations";
 import Logo from "../../assets/shared/desktop/logo.svg";
 import ShoppingCartIcon from "../../assets/shared/desktop/icon-cart.svg";
 import MenuIcon from "../../assets/shared/tablet/icon-hamburger.svg";
 import NavList from "../NavList/NavList";
 import Button from "../Button/Button";
 import CategoriesSection from "../CategoriesSection/CategoriesSection";
-import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion";
 import BlackContainer from "../../containers/Shared/BlackContainer/BlackContainer";
-import { handleRemoveElement, handleShowElement } from "../../utils/handleElement";
-import { shoppingCartAnimationVariants, navBarMenuAnimationVariants } from "./NavBar.animations";
 import CartList from "../CartList/CartList";
-import { handleStopPropagation } from "../../utils/handleStopPropagation";
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState<Boolean>(false);
@@ -54,7 +53,7 @@ const NavBar = () => {
         {showMenu && (
           <BlackContainer action={() => handleRemoveElement(setShowMenu)}>
             <motion.div
-              onClick={(e) => handleStopPropagation(e)}
+              onClick={(e) => e.stopPropagation()}
               variants={navBarMenuAnimationVariants}
               className="navbar-mobile-menu"
             >
@@ -68,7 +67,7 @@ const NavBar = () => {
             className="tranparent-background-container"
           >
             <motion.div variants={shoppingCartAnimationVariants} className="shopping-cart-wrapper">
-              <div onClick={(e) => handleStopPropagation(e)} className="shopping-cart-container">
+              <div onClick={(e) => e.stopPropagation()} className="shopping-cart-container">
                 <CartList />
                 <Button
                   className="checkout-button"

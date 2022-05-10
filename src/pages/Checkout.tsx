@@ -1,4 +1,4 @@
-import { CheckoutMain } from "../../containers/Checkout";
+import { CheckoutMain } from "../containers/Checkout";
 
 const Checkout = () => {
   return (

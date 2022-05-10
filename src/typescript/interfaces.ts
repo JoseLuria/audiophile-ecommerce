@@ -109,3 +109,9 @@ export interface CheckoutOrder extends FormResult {
   cartList: CartProduct[];
   grandTotalPrice: number;
 }
+
+export interface CheckoutResponse {
+  firstElement: CartProduct;
+  othersLength?: number;
+  grandTotalPrice: number;
+}

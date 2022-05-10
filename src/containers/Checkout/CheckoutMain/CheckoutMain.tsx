@@ -1,25 +1,26 @@
 import "./CheckoutMain.styles.scss";
-import MainContainer from "../../Shared/MainContainer/MainContainer";
-import GoBackButton from "../../../components/GoBackButton/GoBackButton";
-import { CheckoutForm, CheckoutSummary } from "../CheckoutSections";
 import { useForm } from "react-hook-form";
-import { FormResult } from "../../../typescript/interfaces";
-import BlackContainer from "../../Shared/BlackContainer/BlackContainer";
 import { useState } from "react";
-import { handleStopPropagation } from "../../../utils/handleStopPropagation";
+import { removeAll } from "../../../redux/cartSlice";
+import { FormResult } from "../../../typescript/interfaces";
+import { CheckoutResponse } from "../../../typescript/interfaces";
 import { useSelector, useDispatch } from "react-redux";
-import { CheckoutOrder } from "../../../typescript/interfaces";
+import { CheckoutForm, CheckoutSummary } from "../CheckoutSections";
+import { handleFormatPrice, handleFormatProductName } from "../../../utils";
+import BlackContainer from "../../Shared/BlackContainer/BlackContainer";
+import GoBackButton from "../../../components/GoBackButton/GoBackButton";
+import MainContainer from "../../Shared/MainContainer/MainContainer";
 import Text from "../../../components/Text/Text";
 import Button from "../../../components/Button/Button";
-import { handleFormatPrice } from "../../../utils/handleFormatPrice";
-import { handleFormatProductName } from "../../../utils/handleFormatProductName";
 import CheckIcon from "../../../assets/shared/desktop/check-icon.svg";
-import { removeAll } from "../../../redux/cartSlice/cartSlice";
+import api from "../../../api";
+import LoadingComponent from "../../../components/LoadingComponent/LoadingComponent";
 
 const CheckoutMain = () => {
   const { handleSubmit, register, formState, reset } = useForm<FormResult>();
   const [showOrder, setShowOrder] = useState<Boolean>(false);
-  const [orderData, setOrderData] = useState<CheckoutOrder>();
+  const [showLoader, setShowLoader] = useState<Boolean>(false);
+  const [orderData, setOrderData] = useState<CheckoutResponse>();
 
   const { cartList, totalPrice } = useSelector((state: any) => state.cart);
 
@@ -34,12 +35,11 @@ const CheckoutMain = () => {
   };
 
   const checkoutSubmit = handleSubmit((data: FormResult) => {
-    const finalOrder = {
-      ...data,
-      cartList,
-      grandTotalPrice,
-    };
-    setOrderData(finalOrder);
+    setShowLoader(true);
+    api.checkoutCart({ ...data, cartList, grandTotalPrice }).then((res) => {
+      setShowLoader(false);
+      setOrderData(res);
+    });
     handleShowOrder();
     dispatch(removeAll());
     reset();
@@ -49,7 +49,7 @@ const CheckoutMain = () => {
     <>
       {showOrder && orderData && (
         <BlackContainer className="order-wrapper" action={handleShowOrder}>
-          <div onClick={handleStopPropagation} className="order-container">
+          <div onClick={(e) => e.stopPropagation()} className="order-container">
             <img className="order-icon" src={CheckIcon} alt="Check Icon" />
             <h2 className="order-title">Thank you for your order</h2>
             <Text className="order-text">You will receive an email confirmation shortly.</Text>
@@ -58,19 +58,19 @@ const CheckoutMain = () => {
                 <div className="order-products-item-data">
                   <img
                     className="order-item-image"
-                    src={orderData.cartList[0].image.desktop}
-                    alt={orderData.cartList[0].name}
+                    src={orderData.firstElement.image.desktop}
+                    alt={orderData.firstElement.name}
                   />
                   <p className="order-item-info">
-                    {handleFormatProductName(orderData.cartList[0].name)}
+                    {handleFormatProductName(orderData.firstElement.name)}
                     <br />
-                    <span>{handleFormatPrice(orderData.cartList[0].price)}</span>
+                    <span>{handleFormatPrice(orderData.firstElement.price)}</span>
                   </p>
-                  <p className="order-item-quantity">x{orderData.cartList[0].quantity}</p>
+                  <p className="order-item-quantity">x{orderData.firstElement.quantity}</p>
                 </div>
-                {orderData.cartList.length > 1 && (
+                {orderData.othersLength && (
                   <span className="order-item-length">
-                    and {orderData.cartList.length - 1} other item(s)
+                    and {orderData.othersLength} other item(s)
                   </span>
                 )}
               </section>
@@ -99,6 +99,7 @@ const CheckoutMain = () => {
           />
         </form>
       </MainContainer>
+      {showLoader && <LoadingComponent />}
     </>
   );
 };

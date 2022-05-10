@@ -1,5 +1,5 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import { cartSlice } from "./cartSlice/cartSlice";
+import { cartSlice } from "./cartSlice";
 import { CartProduct } from "../typescript/interfaces";
 
 const saveToLocalStorage = (state: { cartList: CartProduct[]; totalPrice: number }) => {

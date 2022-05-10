@@ -1,10 +1,10 @@
 import "./CartList.style.scss";
-import { useSelector, useDispatch } from "react-redux";
-import { CartProduct } from "../../typescript/interfaces";
-import CartElement from "../CartListElement/CartElement";
-import { handleFormatPrice } from "../../utils/handleFormatPrice";
-import { removeAll } from "../../redux/cartSlice/cartSlice";
 import { toast } from "react-toastify";
+import { removeAll } from "../../redux/cartSlice";
+import { CartProduct } from "../../typescript/interfaces";
+import { handleFormatPrice } from "../../utils";
+import { useSelector, useDispatch } from "react-redux";
+import CartElement from "../CartListElement/CartElement";
 import Text from "../Text/Text";
 
 const CartList = () => {

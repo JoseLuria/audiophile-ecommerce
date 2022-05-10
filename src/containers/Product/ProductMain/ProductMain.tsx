@@ -1,13 +1,12 @@
 import "./ProductMain.style.scss";
 import MainContainer from "../../Shared/MainContainer/MainContainer";
-import { MultipleProductsProps } from "../../../typescript/interfaces";
+import { IndividualProductProps } from "../../../typescript/interfaces";
 import CategoriesSection from "../../../components/CategoriesSection/CategoriesSection";
 import BestAudioSection from "../../../components/BestAudioSection/BestAudioSection";
 import GoBackButton from "../../../components/GoBackButton/GoBackButton";
 import { ProductInfo, ProductFeatures, ProductGalery, ProductRelated } from "../ProductSections";
 
-const ProductMain = ({ products }: MultipleProductsProps) => {
-  const [mainProductData] = products;
+const ProductMain = ({ product }: IndividualProductProps) => {
   const {
     id,
     name,
@@ -19,7 +18,7 @@ const ProductMain = ({ products }: MultipleProductsProps) => {
     includes,
     gallery,
     others,
-  } = mainProductData;
+  } = product;
 
   return (
     <MainContainer variant="product">

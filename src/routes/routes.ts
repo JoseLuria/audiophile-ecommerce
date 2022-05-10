@@ -1,32 +1,27 @@
-import { lazy, LazyExoticComponent } from "react";
+import { Home, Category, Product, Checkout } from "../pages";
 
 type JSXComponent = () => JSX.Element;
 
 interface Route {
   path: string;
-  Element: LazyExoticComponent<JSXComponent> | JSXComponent;
+  Element: JSXComponent;
 }
-
-const HomeLazy = lazy(() => import("../pages/Home/Home"));
-const CategoryLazy = lazy(() => import("../pages/Category/Category"));
-const ProductLazy = lazy(() => import("../pages/Product/Product"));
-const CheckoutLazy = lazy(() => import("../pages/Checkout/Checkout"));
 
 export const routes: Route[] = [
   {
     path: "/",
-    Element: HomeLazy,
+    Element: Home,
   },
   {
     path: "/category/:id",
-    Element: CategoryLazy,
+    Element: Category,
   },
   {
     path: "/product/:id",
-    Element: ProductLazy,
+    Element: Product,
   },
   {
     path: "/checkout",
-    Element: CheckoutLazy,
+    Element: Checkout,
   },
 ];

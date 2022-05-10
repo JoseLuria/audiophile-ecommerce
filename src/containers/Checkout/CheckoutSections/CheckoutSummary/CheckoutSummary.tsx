@@ -1,8 +1,8 @@
 import "./CheckoutSummary.style.scss";
+import { CartProduct } from "../../../../typescript/interfaces";
+import { handleFormatPrice } from "../../../../utils";
 import Text from "../../../../components/Text/Text";
 import CartElement from "../../../../components/CartListElement/CartElement";
-import { CartProduct } from "../../../../typescript/interfaces";
-import { handleFormatPrice } from "../../../../utils/handleFormatPrice";
 import Button from "../../../../components/Button/Button";
 
 interface CheckoutSummaryProps {
