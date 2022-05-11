@@ -7,7 +7,7 @@ interface stateInterface {
 }
 
 const initialState: stateInterface = {
-  cartList: [] as CartProduct[],
+  cartList: [],
   totalPrice: 0,
 };
 
