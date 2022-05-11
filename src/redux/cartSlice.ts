@@ -1,7 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { CartProduct } from "../typescript/interfaces";
 
-const initialState = {
+interface stateInterface {
+  cartList: CartProduct[];
+  totalPrice: number;
+}
+
+const initialState: stateInterface = {
   cartList: [] as CartProduct[],
   totalPrice: 0,
 };
@@ -10,9 +15,9 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToCart: (state, action: PayloadAction<CartProduct>) => {
+    addToCart: (state: stateInterface, action: PayloadAction<CartProduct>) => {
       const isProductAlreadyInCart = state.cartList.find(
-        (cartProduct) => cartProduct.id === action.payload.id,
+        (cartProduct: CartProduct) => cartProduct.id === action.payload.id,
       );
 
       if (!isProductAlreadyInCart) {
@@ -23,9 +28,12 @@ export const cartSlice = createSlice({
 
       state.totalPrice += action.payload.price * action.payload.quantity;
     },
-    changeQuantity: (state, action: PayloadAction<{ id: number; value: number }>) => {
+    changeQuantity: (
+      state: stateInterface,
+      action: PayloadAction<{ id: number; value: number }>,
+    ) => {
       const productToChange = state.cartList.find(
-        (cartProduct) => cartProduct.id === action.payload.id,
+        (cartProduct: CartProduct) => cartProduct.id === action.payload.id,
       );
 
       if (productToChange) {
@@ -33,16 +41,19 @@ export const cartSlice = createSlice({
         state.totalPrice += action.payload.value * productToChange.price;
       }
     },
-    removeFromCart: (state, action: PayloadAction<number>) => {
+    removeFromCart: (state: stateInterface, action: PayloadAction<number>) => {
       state.cartList = state.cartList.filter(
         (cartProduct: CartProduct) => cartProduct.id !== action.payload,
       );
     },
-    removeAll: (state) => {
+    removeAll: (state: stateInterface) => {
       state.cartList = [];
       state.totalPrice = 0;
     },
-    setCart: (state, action: PayloadAction<{ cartList: CartProduct[]; totalPrice: number }>) => {
+    setCart: (
+      state: stateInterface,
+      action: PayloadAction<{ cartList: CartProduct[]; totalPrice: number }>,
+    ) => {
       state.cartList = action.payload.cartList;
       state.totalPrice = action.payload.totalPrice;
     },
