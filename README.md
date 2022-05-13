@@ -1,4 +1,4 @@
-# 🤖Audiophile e-commerce website challenge
+# 🤖 Audiophile e-commerce website challenge
 
 A multi-page e-commerce website challenge from Frontend Mentor, [you can see the live site here](https://audiophile-ecommerce-website.netlify.app/)
 
@@ -7,10 +7,6 @@ A multi-page e-commerce website challenge from Frontend Mentor, [you can see the
 ![Screenshot](./public/preview.jpg)
 
 ## 🚀 Usage
-
-Clone and run the Repository
-
-## Installation
 
 ### First clone the repository form GitHub:
 
@@ -24,13 +20,13 @@ git clone https://github.com/JoseLuria/audiophile-ecommerce.git
 npm install
 ```
 
-#### Finally, start the server with the following command:
+### Finally, start the server with the following command:
 
 ```shell
 npm run dev
 ```
 
-## Built with
+## ⚙️ Built with
 
 - [Vite](https://vitejs.dev/)
 - [React](https://reactjs.org/)
@@ -40,6 +36,6 @@ npm run dev
 - [Redux Toolkit](https://redux-toolkit.js.org/)
 - [React Toastify](https://fkhadra.github.io/react-toastify/introduction)
 
-## License
+## 📄 License
 
 [MIT](https://opensource.org/licenses/MIT)

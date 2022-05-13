@@ -17,7 +17,7 @@ export const cartSlice = createSlice({
   reducers: {
     addToCart: (state: stateInterface, action: PayloadAction<CartProduct>) => {
       const isProductAlreadyInCart = state.cartList.find(
-        (cartProduct: CartProduct) => cartProduct.id === action.payload.id,
+        (cartProduct) => cartProduct.id === action.payload.id,
       );
 
       if (!isProductAlreadyInCart) {
@@ -33,7 +33,7 @@ export const cartSlice = createSlice({
       action: PayloadAction<{ id: number; value: number }>,
     ) => {
       const productToChange = state.cartList.find(
-        (cartProduct: CartProduct) => cartProduct.id === action.payload.id,
+        (cartProduct) => cartProduct.id === action.payload.id,
       );
 
       if (productToChange) {
@@ -43,7 +43,7 @@ export const cartSlice = createSlice({
     },
     removeFromCart: (state: stateInterface, action: PayloadAction<number>) => {
       state.cartList = state.cartList.filter(
-        (cartProduct: CartProduct) => cartProduct.id !== action.payload,
+        (cartProduct) => cartProduct.id !== action.payload,
       );
     },
     removeAll: (state: stateInterface) => {
